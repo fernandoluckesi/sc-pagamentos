@@ -1,16 +1,26 @@
-import React from 'react';
+import React, {useState} from "react";
 
-const Header = ({changeSection}) => (
-<nav className="navbar fixed-top bg-dark navbar-expand-md d-flex justify-content-around">
-  <div className="navbar-logo text-light">Logo</div>
-  <div className="d-flex text-light">
-    <h2 onClick={() => changeSection('trade')}>Trade</h2>
-    <h2 onClick={() => changeSection('wallet')}>Carteira</h2>
+import logoColor from "../../images/logo-color.png";
+
+const Header = ({ changeSection }) => {
+  const [showMenu, setShowMenu] = useState(false)
+  return (
+  <div className="bg-dark fixed-top sc-header">
+    <nav className="container d-flex justify-content-between align-items-end py-3">
+      <img
+        src={logoColor}
+        alt="sc pagamentos logo"
+        className="col-2"
+      />
+      <div className="d-flex text-light col-8 justify-content-center">
+        <button button className="sc-button-header" type="button" onClick={() => changeSection("trade")}>Trade</button>
+        <button button className="sc-button-header" type="button" onClick={() => changeSection("wallet")}>Carteira</button>
+      </div>
+      <div className="col-2">
+      <i class="fa fa-user-circle"></i>
+      </div>
+    </nav>
   </div>
-  <div className="d-flex text-light">
-    <h2>Profile</h2>
-  </div>
-</nav>
-);
+)};
 
 export default Header;

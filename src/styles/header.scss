@@ -1,3 +1,19 @@
-h1 {
-  color: $color;
+.sc-header {
+  color: $light-text;
+  .sc-button-header {
+    background-color: transparent;
+    border: none;
+    color: $light-text;
+    font-weight: 600;
+    font-size: 24px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $light-blue;
+    }
+  }
+  i {
+    font-size: 2rem;
+  }
 }

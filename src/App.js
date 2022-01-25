@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header changeSection={(section) => setSection(section)}/>
-      <div className="mt-5 pt-3">
+      <div className="mt-5 pt-4">
       {showSection(section)}
       </div>
     </div>

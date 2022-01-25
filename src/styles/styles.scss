@@ -1,4 +1,9 @@
-$color: red;
+$light-text: #ffffff;
+$light-blue: #5ce1e6;
+
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 @import 'header';
 
