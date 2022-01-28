@@ -1,26 +1,44 @@
-import React, {useState} from "react";
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaUserCircle } from 'react-icons/fa';
 import logoColor from "../../images/logo-color.png";
+import ModalMenu from "../ModalMenu";
+
+
 
 const Header = ({ changeSection }) => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleClickShowMenu = () => setShowMenu(!showMenu);
+
   return (
-  <div className="bg-dark fixed-top sc-header">
-    <nav className="container d-flex justify-content-between align-items-end py-3">
-      <img
-        src={logoColor}
-        alt="sc pagamentos logo"
-        className="col-2"
-      />
-      <div className="d-flex text-light col-8 justify-content-center">
-        <button button className="sc-button-header" type="button" onClick={() => changeSection("trade")}>Trade</button>
-        <button button className="sc-button-header" type="button" onClick={() => changeSection("wallet")}>Carteira</button>
-      </div>
-      <div className="col-2">
-      <i class="fa fa-user-circle"></i>
-      </div>
-    </nav>
-  </div>
-)};
+    <div className="headerMainContainer">
+      <nav className="headerNavBar">
+        <img
+          src={logoColor}
+          alt="sc pagamentos logo"
+          className="headerLogo"
+        />
+        <div className="headerNavLinks">
+
+          <Link to="/trade">Trade</Link>
+          <Link to="/carteira">Carteira</Link>
+        </div>
+        <div className="headerIconPerfilAccount"  >
+          <FaUserCircle
+            color='#ffff'
+            onClick={handleClickShowMenu}
+
+            size={32}
+          />
+        </div>
+      </nav>
+      {
+        showMenu &&
+        <ModalMenu />
+      }
+    </div>
+  )
+};
 
 export default Header;

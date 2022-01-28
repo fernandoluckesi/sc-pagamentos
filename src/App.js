@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
-import Header from './components/Header';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Trade from './components/Trade';
 import './App.css';
 import './styles/styles.scss';
 
+
 function App() {
-  const [section, setSection] = useState('trade');
-
-  const showSection = (section) => {
-    if (section === 'wallet') return 'carteiraa';
-    return 'tradeee'
-  }
-
   return (
-    <div className="App">
-      <Header changeSection={(section) => setSection(section)}/>
-      <div className="mt-5 pt-4">
-      {showSection(section)}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/trade" element={<Trade />} />
+      </Routes>
+    </Router>
   );
 }
 

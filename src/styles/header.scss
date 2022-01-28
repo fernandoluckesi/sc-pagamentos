@@ -1,19 +1,32 @@
-.sc-header {
-  color: $light-text;
-  .sc-button-header {
-    background-color: transparent;
-    border: none;
-    color: $light-text;
-    font-weight: 600;
-    font-size: 24px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: $light-blue;
-    }
-  }
-  i {
-    font-size: 2rem;
-  }
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.headerMainContainer {
+  background-color: #000000;
+}
+
+.headerNavBar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1350px;
+  padding: 20px 90px;
+}
+
+.headerLogo {
+  width: 150px;
+}
+
+.headerNavLinks {
+  border: 1px solid #ffff;
+  width: 250px;
+}
+
+.headerIconPerfilAccount:hover {
+  cursor: pointer;
 }
